@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS styl dokument
+Outeur: Ruwan van Lingen
+Datum: 2026/02/23
+CSS styl dokument vir Klasie Blomme Boerdery se webtuiste.
+Basiese CSS.
+*/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  background-color: #ffccff;
+  
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color:black;
+    font-size: 2.5em;
+}
+ p {
+    font-size: 1.2em;
+    color: #333;
+ }
+
+ nav{
+    padding: 1rem;
+ }
