@@ -59,6 +59,7 @@ ol,
 p,
 section,
 span,
+/* Gebruik die boksmodel vir alle elemente */
 ul {
   margin: 0;
   padding: 0;
@@ -70,8 +71,7 @@ ul {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* Gebruik die boksmodel vir alle elemente */
+/* Stel die lynhoogte van die liggaan element op 1 */
 body {
   line-height: 1;
 }
-/* Stel die lynhoogte van die liggaan element op 1 */

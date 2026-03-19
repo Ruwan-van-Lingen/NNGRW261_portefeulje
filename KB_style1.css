@@ -1,4 +1,6 @@
 @charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 /* CSS styl dokument
 Outeur: Ruwan van Lingen
 Datum: 2026/02/23
@@ -6,25 +8,29 @@ CSS styl dokument vir Klasie Blomme Boerdery se webtuiste.
 Basiese CSS.
 */
 
+/* HTML en Body styl */
+html {
+  background-color: rgb(24, 26, 27);
+}
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   line-height: 1.5;
-  color: #333;
-  background-color: #ffccff;
-  
+  color: ivory;
 }
-
+/* Opskrif styl */
 h1 {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    color:black;
-    font-size: 2.5em;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  color: ivory;
+  font-size: 2.5em;
 }
- p {
-    font-size: 1.2em;
-    color: #333;
- }
+p {
+  font-size: 1.2em;
+  color: ivory;
+}
 
- nav{
-    padding: 1rem;
- }
+nav {
+  padding: 1rem;
+  background-color: rgb(24, 26, 27);
+  color: ivory;
+}
