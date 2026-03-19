@@ -78,6 +78,21 @@ nav a {
   padding: 0.5rem 1rem; /* Maak die klikbare area 'n hele blok */
   color: ivory;
 }
+/* figcaption skakels styl */
+figcaption {
+  margin-top: 1rem;
+  color: ivory;
+}
+/* figcaption skakels styl */
+figcaption a {
+  color: ivory;
+  text-decoration: none;
+}
+/* figcaption skakels hover styl */
+figcaption a:hover {
+  color: plum;
+  text-decoration: underline;
+}
 /* Tuisblad foto styl */
 .tuisblad-foto {
   display: block;
