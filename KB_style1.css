@@ -1,12 +1,13 @@
 @charset "utf-8";
 @font-face {
-   font-family: 'Roboto';
-   src: url('fonts/roboto-regular.woff2') format('woff2'),
-        url('fonts/roboto-regular.woff') format('woff');
-   font-weight: 400;
-   font-style: normal;
-   font-display: swap; /* Best practice: shows fallback font until Roboto loads */
- }
+  font-family: "Roboto";
+  src:
+    url("fonts/roboto-regular.woff2") format("woff2"),
+    url("fonts/roboto-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Best practice: shows fallback font until Roboto loads */
+}
 
 /* CSS styl dokument
 Outeur: Ruwan van Lingen
@@ -24,6 +25,10 @@ body {
   line-height: 1.5;
   color: ivory;
   font-size: 1em;
+  margin-left: auto;
+   margin-right: auto;
+   max-width: 1200px;
+   padding: 1rem;
 }
 /* Opskrif styl */
 h1 {
@@ -37,10 +42,19 @@ p {
   font-size: 1.2em;
   color: ivory;
 }
-
+/* Navigasie skakels styl */
 nav {
   padding: 1rem;
   background-color: rgb(24, 26, 27);
   color: ivory;
+}
+
+nav a {
+  color: ivory;
+  text-decoration: none;
+}
+/* Voeg hover effek by wat die kleur verander en onderstrrep*/ 
+nav a:hover {
+  color: rgb(254, 104, 179); 
   text-decoration: underline;
 }
