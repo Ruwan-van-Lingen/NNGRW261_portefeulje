@@ -52,11 +52,12 @@ nav {
 nav a {
   color: ivory;
   text-decoration: none;
+  border: 1px solid ivory;
+  background-color: rgb(24, 26, 27);
 }
 /* Voeg hover effek by wat die kleur verander en onderstrrep*/ 
 nav a:hover {
-  color: rgb(254, 104, 179); 
-  text-decoration: underline;
+  background-color: plum;
 }
 
 nav ul {
