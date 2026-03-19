@@ -58,3 +58,22 @@ nav a:hover {
   color: rgb(254, 104, 179); 
   text-decoration: underline;
 }
+
+nav ul {
+  display: flex;
+  justify-content: center; /* Maak die blokke horisontaal sentreer */
+  gap: 1.5rem; /* Spasieer die elemente */
+  padding: 0;
+}
+
+nav li {
+  display: block;
+}
+
+nav a {
+   display: block;
+   text-align: center;
+   padding: 0.5rem 1rem; /* Maak die klikbare area 'n hele blok */
+   color: ivory;
+}
+
