@@ -26,9 +26,9 @@ body {
   color: ivory;
   font-size: 1em;
   margin-left: auto;
-   margin-right: auto;
-   max-width: 1200px;
-   padding: 1rem;
+  margin-right: auto;
+  max-width: 1200px;
+  padding: 1rem;
 }
 /* Opskrif styl */
 h1 {
@@ -41,6 +41,7 @@ h1 {
 p {
   font-size: 1.2em;
   color: ivory;
+  text-align: center;
 }
 /* Navigasie skakels styl */
 nav {
@@ -55,7 +56,7 @@ nav a {
   border: 1px solid ivory;
   background-color: rgb(24, 26, 27);
 }
-/* Voeg hover effek by wat die kleur verander en onderstrrep*/ 
+/* Voeg hover effek by wat die kleur verander en onderstrrep*/
 nav a:hover {
   background-color: plum;
 }
@@ -72,9 +73,17 @@ nav li {
 }
 
 nav a {
-   display: block;
-   text-align: center;
-   padding: 0.5rem 1rem; /* Maak die klikbare area 'n hele blok */
-   color: ivory;
+  display: block;
+  text-align: center;
+  padding: 0.5rem 1rem; /* Maak die klikbare area 'n hele blok */
+  color: ivory;
 }
-
+/* Tuisblad foto styl */
+.tuisblad-foto {
+  display: block;
+  max-width: 100%; /* Verhoed dat die foto breër as die skerm word */
+  height: auto; /* Hou die foto se proporsies reg (geen "stretching" nie) */
+  margin: 2rem auto; /* 2rem spasie bo/onder en 'auto' sentreer dit horisontaal */
+  border-radius: 12px; /* Maak die hoeke sagter */
+  box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg 'n diepte-skaduwee by */
+}
