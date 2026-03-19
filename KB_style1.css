@@ -82,8 +82,16 @@ nav a {
 .tuisblad-foto {
   display: block;
   max-width: 100%; /* Verhoed dat die foto breër as die skerm word */
-  height: auto; /* Hou die foto se proporsies reg (geen "stretching" nie) */
+  height: auto; /* Hou die foto se aspect ratio reg */
   margin: 2rem auto; /* 2rem spasie bo/onder en 'auto' sentreer dit horisontaal */
   border-radius: 12px; /* Maak die hoeke sagter */
   box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg 'n diepte-skaduwee by */
+}
+
+/* Voetnoot styl */
+footer {
+  background: linear-gradient(to top, rgb(24, 26, 27), plum);
+  color: ivory;
+  text-align: center;
+  padding: 1.5rem;
 }
