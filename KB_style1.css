@@ -103,6 +103,17 @@ figcaption a:hover {
   box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg 'n diepte-skaduwee by */
 }
 
+.oor_ons-foto-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: center;
+}
+.oor_ons-foto {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Voetnoot styl */
 footer {
   background: linear-gradient(to top, rgb(24, 26, 27), plum);
