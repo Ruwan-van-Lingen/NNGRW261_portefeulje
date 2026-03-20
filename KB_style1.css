@@ -63,7 +63,7 @@ nav a:hover {
 
 nav ul {
   display: flex;
-  justify-content: center; /* Maak die blokke horisontaal sentreer */
+  justify-content: center; /* Sentreer die elemente horisontaal */
   gap: 1.5rem; /* Spasieer die elemente */
   padding: 0;
 }
@@ -80,7 +80,7 @@ nav a {
 }
 /* figcaption skakels styl */
 figcaption {
-  margin-top: 1rem;
+  margin-top: 0.25rem;
   color: ivory;
 }
 /* figcaption skakels styl */
@@ -98,11 +98,11 @@ figcaption a:hover {
   display: block;
   max-width: 100%; /* Verhoed dat die foto breër as die skerm word */
   height: auto; /* Hou die foto se aspect ratio reg */
-  margin: 2rem auto; /* 2rem spasie bo/onder en 'auto' sentreer dit horisontaal */
+  margin: 2rem auto 0 auto; /* 2rem spasie bo, 0 onder, en 'auto' sentreer dit horisontaal */
   border-radius: 12px; /* Maak die hoeke sagter */
   box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg 'n diepte-skaduwee by */
 }
-
+/*oor ons bladsy foto styl */
 .oor_ons-foto-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -123,9 +123,41 @@ figcaption a:hover {
   box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg 'n diepte-skaduwee by */
 }
 
-.oor_ons-teks p {
-  text-align: left; /* Maak seker die teks lees maklik in 'n blok langs die foto */
+.oor_ons-foto-container p {
+  text-align: left !important; /* Links belyn */
   margin-bottom: 1rem;
+}
+/* Kontak bladsy foto styl */
+.kontak_ons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.kontak_ons-container figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Sentreer die foto en figcaption mooi saam */
+}
+
+.kontak-foto {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px; /* Maak die hoeke sagter */
+  box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg 'n diepte-skaduwee by */
+}
+
+.kontak_ons-container p {
+  text-align: left !important; /* Links belyn */
+  margin-bottom: 1rem;
+}
+
+.kontak_ons-container address {
+  font-style: normal; /* Verwyder die verstek skuinsdruk (italics) as jy dit professioneel wil hou */
+  text-align: center; /* Sentreer dit mooi in die kolom */
+  line-height: 1; /* Maak die spasie tussen die reëls van jou adres 'n bietjie groter en leesbaarder */
+  margin-top: 1rem;
 }
 
 /* Voetnoot styl */
@@ -134,4 +166,8 @@ footer {
   color: ivory;
   text-align: center;
   padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg 'n diepte-skaduwee by */
 }
