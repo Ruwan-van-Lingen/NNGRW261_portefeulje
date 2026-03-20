@@ -160,6 +160,29 @@ figcaption a:hover {
   margin-top: 1rem;
 }
 
+/* Galery bladsy styl */
+.galery-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Maak 2 ewe groot kolomme langs mekaar */
+  gap: 1.5rem; /* Die spasie tussen al 4 die foto's */
+  margin-top: 2rem;
+}
+
+.galery-container figure {
+  margin: 0; /* Verwyder die leë verstek kantlyne wat die blaaier outomaties om 'figure' sit */
+  display: flex;
+  flex-direction: column; /* Stapel die foto en onderskrif mooi bo-op mekaar */
+}
+
+.galery-foto {
+  width: 100%;
+  height: auto; /* Verander na auto sodat die foto nie oor die figcaption rek nie */
+  object-fit: cover; /* Verhoed dat foto's uitrek; dit sny die kante netjies af om te pas */
+  aspect-ratio: 4 / 3; /* Dwing dieselfde vorm (4:3) op al vier die foto's af vir 'n eenvormige gallery */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg skaduwee by vir diepte */
+}
+
 /* Voetnoot styl */
 footer {
   background: linear-gradient(to top, rgb(24, 26, 27), plum);
