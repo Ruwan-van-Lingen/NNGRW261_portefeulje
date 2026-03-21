@@ -1,13 +1,4 @@
 @charset "utf-8";
-@font-face {
-  font-family: "Roboto";
-  src:
-    url("fonts/roboto-regular.woff2") format("woff2"),
-    url("fonts/roboto-regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap; /* Best practice: shows fallback font until Roboto loads */
-}
 
 /* CSS styl dokument
 Outeur: Ruwan van Lingen
@@ -15,6 +6,17 @@ Datum: 2026/02/23
 CSS styl dokument vir Klasie Blomme Boerdery se webtuiste.
 Basiese CSS.
 */
+
+/* Font invoer */
+@font-face {
+  font-family: "Roboto";
+  src:
+    url("fonts/roboto-regular.woff2") format("woff2"),
+    url("fonts/roboto-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* HTML en Body styl */
 html {
@@ -38,6 +40,7 @@ h1 {
   font-size: 2.5em;
   font-weight: bold;
 }
+/* paragraaf styl */
 p {
   font-size: 1.2em;
   color: ivory;
@@ -83,7 +86,7 @@ figcaption {
   margin-top: 0.25rem;
   color: ivory;
 }
-/* figcaption skakels styl */
+
 figcaption a {
   color: ivory;
   text-decoration: none;
