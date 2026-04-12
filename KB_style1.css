@@ -207,5 +207,12 @@ footer {
 
   /* Kleur en rande */
   border: 1px solid ivory; /* Voeg 'n dun rand by die hele tabel */
-  background-color: rgb(24,26,27); /* Voeg 'n donker agtergrond vir die tabel by*/
+  background-color: rgb(24, 26, 27);
+}
+/* Tabel opskrif styl */
+.Pryslys caption {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 10px;
+  color: violet;
 }
