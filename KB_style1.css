@@ -216,3 +216,11 @@ footer {
   padding: 10px;
   color: violet;
 }
+/* Tabel ry opskrif styl */
+.Pryslys th {
+  background-color: violet;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  font-size: 1.1em;
+}
