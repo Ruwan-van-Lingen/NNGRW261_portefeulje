@@ -221,6 +221,14 @@ footer {
   background-color: violet;
   color: white;
   padding: 10px;
-  text-align: left;
+  text-align: center;
   font-size: 1.1em;
+}
+/* Tabel sel styl */
+.Pryslys td {
+  padding: 12px 20px; /* Padding */
+  text-align: center;
+  vertical-align: top;
+  border-bottom: 1px solid #eee;
+  height: 15px; /* Spesifieke ry-hoogte */
 }
