@@ -232,3 +232,8 @@ footer {
   border-bottom: 1px solid #eee;
   height: 15px; /* Spesifieke ry-hoogte */
 }
+
+/* Sweef effek vir tabel */
+.Pryslys tr:hover {
+  background-color: plum;
+}
