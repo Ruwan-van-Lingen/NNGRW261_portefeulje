@@ -376,3 +376,43 @@ button {
     background-color: violet;
     color: #c0392b; /* Teks word rooi as jy hover */
 }
+
+/* Mobiel-vriendelike (Responsive) Ontwerp */
+@media (max-width: 768px) {
+  /* Navigasie vou na onder in plaas van langs mekaar */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  /* Grids: Verander die 2 kolomme na 1 kolom op klein skerms */
+  .oor_ons-foto-container,
+  .kontak_ons-container,
+  .galery-container {
+    grid-template-columns: 1fr;
+  }
+  /* Pryslys word breer gemaak om op te pas */
+  .Pryslys {
+    width: 100%;
+  }
+  /* Vormvelde val onder mekaar in plaas van langs mekaar */
+  .formrow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .formrow input,
+  .formrow select,
+  .formrow textarea {
+    margin-left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+  .produk-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .produk-item input[type="number"] {
+    margin-left: 0;
+  }
+}
