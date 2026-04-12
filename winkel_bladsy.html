@@ -28,8 +28,9 @@
           <li><a href="galery_bladsy.html">Galery</a></li>
         </ul>
       </nav>
-      <!-- Bestellings -->
+      <!-- Bestellings-->
       <p>Bestel jou blomme hier!</p>
+      <!-- Pryslys -->
     </article>
     <table class="Pryslys">
       <tr>
@@ -68,13 +69,14 @@
         <td>R50.00</td>
       </tr>
     </table>
-
+    <!-- Bestelvorm -->
     <form action="https://www.voorbeeld/formsubmit" method="post">
       <fieldset id="bestelling">
         <legend>Bestelvorm</legend>
-
+        <!-- Opskrif -->
         <h3>Kies jou blomme (per 6 blomme):</h3>
-
+        <!-- Produkte -->
+        <!-- Tulpe checkboks en spinner -->
         <div class="produk-item">
           <label>
             <input type="checkbox" name="produk" value="tulpe" /> Vars Tulpe
@@ -88,7 +90,7 @@
             max="60"
           />
         </div>
-
+        <!-- Rose checkboks en spinner -->
         <div class="produk-item">
           <label>
             <input type="checkbox" name="produk" value="rose" /> Vars Rose
@@ -102,7 +104,7 @@
             max="60"
           />
         </div>
-
+        <!-- Dahlias checkboks en spinner -->
         <div class="produk-item">
           <label>
             <input type="checkbox" name="produk" value="dahlias" /> Vars Dahlias
@@ -116,7 +118,9 @@
             max="60"
           />
         </div>
+        <!-- Ander produkte -->
         <h3>Kies jou ander produkte:</h3>
+        <!-- Droë roos blare checkboks en spinner -->
         <div class="produk-item">
           <label>
             <input type="checkbox" name="produk" value="Droë roos blare" /> Droë
@@ -124,7 +128,7 @@
           </label>
           <input type="number" name="qty-Droë roos blare" max="10" />
         </div>
-
+        <!-- Blom sade checkboks en spinner -->
         <div class="produk-item">
           <label>
             <input type="checkbox" name="produk" value="blom sade" /> Blom
@@ -132,7 +136,7 @@
           </label>
           <input type="number" name="qty-blom sade" max="10" />
         </div>
-
+        <!-- Blom plantjie checkboks en spinner -->
         <div class="produk-item">
           <label>
             <input type="checkbox" name="produk" value="blom plantjie" /> Blom
@@ -140,7 +144,9 @@
           </label>
           <input type="number" name="qty-blom plantjie" max="5" />
         </div>
-<h3>Vul jou besonderhede in:</h3>
+        <!-- Kliënt besonderhede -->
+        <h3>Vul jou besonderhede in:</h3>
+        <!-- Naam -->
         <div class="formrow">
           <label for="naam">Naam:</label>
           <input
@@ -148,15 +154,23 @@
             id="naam"
             name="naam"
             placeholder="Naam en van"
+            pattern="[A-Za-z ]+" 
+            title="Die naam mag slegs letters bevat (geen syfers of simbole nie)."
             required
           />
         </div>
-
+        <!-- E-pos -->
         <div class="formrow">
           <label for="email">E-pos:</label>
-          <input type="email" id="email" name="email" required />
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="voorbeeld@e-pos.com"
+            required 
+          />
         </div>
-
+        <!-- Telefoon -->
         <div class="formrow">
           <label for="telefoon">Telefoon:</label>
           <input
@@ -164,13 +178,61 @@
             id="telefoon"
             name="telefoon"
             placeholder="(+27) XX XXX XXXX"
+            pattern="[0-9]{10}"
+            title="Die telefoonnommer moet presies 10 syfers bevat."
+            required
+          />
+        </div>
+        <!-- Afleweringsadres -->
+        <div class="formrow">
+          <label for="straat">Straatadres:</label>
+          <input
+            type="text"
+            id="straat"
+            name="straat"
             required
           />
         </div>
 
         <div class="formrow">
-          <label for="adres">Afleweringsadres:</label>
-          <input type="text" id="adres" name="adres" required />
+          <label for="stad">Stad/Dorp:</label>
+          <input
+            type="text"
+            id="stad"
+            name="stad"
+            pattern="[A-Za-z ]+"
+            title="Slegs letters word toegelaat"
+            required
+          />
+        </div>
+
+        <div class="formrow">
+          <label for="provinsie">Provinsie:</label>
+          <select id="provinsie" name="provinsie" required>
+            <option value="" disabled selected>Kies provinsie...</option>
+            <option value="Gauteng">Gauteng</option>
+            <option value="Wes-Kaap">Wes-Kaap</option>
+            <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+            <option value="Vrystaat">Vrystaat</option>
+            <option value="Oos-Kaap">Oos-Kaap</option>
+            <option value="Noord-Kaap">Noord-Kaap</option>
+            <option value="Noordwes">Noordwes</option>
+            <option value="Mpumalanga">Mpumalanga</option>
+            <option value="Limpopo">Limpopo</option>
+          </select>
+        </div>
+
+        <div class="formrow">
+          <label for="poskode">Poskode:</label>
+          <input
+            type="text"
+            id="poskode"
+            name="poskode"
+            placeholder="0157"
+            pattern="[0-9]{4}"
+            title="Die poskode moet presies 4 syfers bevat (Bv. 0157)."
+            required
+          />
         </div>
       </fieldset>
     </form>
