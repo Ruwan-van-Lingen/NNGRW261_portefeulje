@@ -40,6 +40,13 @@ h1 {
   font-size: 2.5em;
   font-weight: bold;
 }
+h3 {
+  border-bottom: 2px solid ivory;
+  padding-bottom: 10px;
+  margin-top: 25px;
+  color: violet;
+  font-size: 1em;
+}
 /* paragraaf styl */
 p {
   font-size: 1.2em;
@@ -281,4 +288,54 @@ fieldset {
   padding: 30px;
   max-width: 600px;
   margin: 20px auto; /* Sentreer die veldset op die bladsy */
+}
+legend {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: violet;
+  padding: 0 15px;
+}
+
+/* Die houer vir elke ry (Checkbox + Teks + Spinner) */
+.produk-item {
+  display: flex;
+  justify-content: space-between; /* Stoot die spinner heeltemal na regs */
+  align-items: center; /* Hou alles vertikaal in die middel van die ry */
+  padding: 12px 0; /* Groter spasie tussen die verskillende rye */
+  border-bottom: 1px solid #eee; /* Opsionele lyn om rye te skei */
+  max-width: 500px; /* Beperk die wydte vir 'n netjiese voorkoms */
+}
+
+/* Die label */
+.produk-item label {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Spasie tussen die checkbox en die teks */
+  cursor: pointer;
+}
+
+/* Die spinner */
+.produk-item input[type="number"] {
+  margin-left: 40px; /* Spasie tussen teks en spinner */
+  padding: 5px;
+  width: 60px; /* Maak alle spinners dieselfde breedte */
+}
+
+/* Kliënt besonderhede */
+.formrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  max-width: 500px;
+}
+
+.formrow label {
+  flex: 1; /* Label links */
+}
+
+.formrow input {
+  flex: 2;  /* Invoer veld regs */
+  padding: 8px;
+  margin-left: 20px; /* Maak spasie tussen label en invoer */
 }
