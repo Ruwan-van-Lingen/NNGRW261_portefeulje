@@ -148,31 +148,31 @@
         <h3>Vul jou besonderhede in:</h3>
         <!-- Naam -->
         <div class="formrow">
-          <label for="naam">Naam:</label>
+          <label for="naam">*Naam:</label>
           <input
             type="text"
             id="naam"
             name="naam"
             placeholder="Naam en van"
-            pattern="[A-Za-z ]+" 
+            pattern="[A-Za-z ]+"
             title="Die naam mag slegs letters bevat (geen syfers of simbole nie)."
             required
           />
         </div>
         <!-- E-pos -->
         <div class="formrow">
-          <label for="email">E-pos:</label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
+          <label for="email">*E-pos:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
             placeholder="voorbeeld@e-pos.com"
-            required 
+            required
           />
         </div>
         <!-- Telefoon -->
         <div class="formrow">
-          <label for="telefoon">Telefoon:</label>
+          <label for="telefoon">*Telefoon:</label>
           <input
             type="tel"
             id="telefoon"
@@ -185,17 +185,12 @@
         </div>
         <!-- Afleweringsadres -->
         <div class="formrow">
-          <label for="straat">Straatadres:</label>
-          <input
-            type="text"
-            id="straat"
-            name="straat"
-            required
-          />
+          <label for="straat">*Straatadres:</label>
+          <input type="text" id="straat" name="straat" required />
         </div>
 
         <div class="formrow">
-          <label for="stad">Stad/Dorp:</label>
+          <label for="stad">*Stad/Dorp:</label>
           <input
             type="text"
             id="stad"
@@ -207,7 +202,7 @@
         </div>
 
         <div class="formrow">
-          <label for="provinsie">Provinsie:</label>
+          <label for="provinsie">*Provinsie:</label>
           <select id="provinsie" name="provinsie" required>
             <option value="" disabled selected>Kies provinsie...</option>
             <option value="Gauteng">Gauteng</option>
@@ -223,7 +218,7 @@
         </div>
 
         <div class="formrow">
-          <label for="poskode">Poskode:</label>
+          <label for="poskode">*Poskode:</label>
           <input
             type="text"
             id="poskode"
@@ -233,6 +228,10 @@
             title="Die poskode moet presies 4 syfers bevat (Bv. 0157)."
             required
           />
+        </div>
+        <div class="button-row">
+          <button type="submit" class="btn-submit">Plaas Bestelling</button
+          ><button type="reset" class="btn-cancel">Kanselleer</button>
         </div>
       </fieldset>
     </form>

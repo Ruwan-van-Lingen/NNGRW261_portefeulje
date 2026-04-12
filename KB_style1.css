@@ -302,7 +302,7 @@ legend {
   justify-content: space-between; /* Stoot die spinner heeltemal na regs */
   align-items: center; /* Hou alles vertikaal in die middel van die ry */
   padding: 12px 0; /* Groter spasie tussen die verskillende rye */
-  border-bottom: 1px solid #eee; /* Opsionele lyn om rye te skei */
+  border-bottom: 1px solid ivory; /* Opsionele lyn om rye te skei */
   max-width: 500px; /* Beperk die wydte vir 'n netjiese voorkoms */
 }
 
@@ -335,7 +335,44 @@ legend {
 }
 
 .formrow input {
-  flex: 2;  /* Invoer veld regs */
+  flex: 2; /* Invoer veld regs */
   padding: 8px;
   margin-left: 20px; /* Maak spasie tussen label en invoer */
+}
+
+.button-row {
+  display: flex;
+  justify-content: flex-end; /* Skuif knoppies na regs */
+  gap: 15px; /* Spasie tussen knoppies */
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid ivory;
+}
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+/* Submit Knoppie Styl */
+.btn-submit {
+    background-color: plum; 
+    color: ivory;
+}
+
+.btn-submit:hover {
+    background-color: violet;
+}
+
+/* Cancel Knoppie Styl */
+.btn-cancel {
+    background-color: plum;
+    color: ivory;
+}
+
+.btn-cancel:hover {
+    background-color: violet;
+    color: #c0392b; /* Teks word rooi as jy hover */
 }
