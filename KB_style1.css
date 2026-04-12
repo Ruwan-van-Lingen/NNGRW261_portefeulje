@@ -201,13 +201,16 @@ footer {
 .Pryslys {
   /* Breedte en algemene belyning */
   width: 60%;
+  border-collapse: separate; /* Verwyder gapings tussen lyne */
+  border-spacing: 0; /* Verwyder gapings tussen selle */
+  border: 2px solid ivory;
+  border-radius: 12px;
   margin: 20px auto; /* Sentreer die tabel op die bladsy */
-  border-collapse: collapse; /* Verwyder gapings tussen lyne */
+  overflow: hidden;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
 
   /* Kleur en rande */
   border: 1px solid ivory; /* Voeg 'n dun rand by die hele tabel */
-  background-color: rgb(24, 26, 27);
 }
 /* Tabel opskrif styl */
 .Pryslys caption {
@@ -223,14 +226,30 @@ footer {
   padding: 10px;
   text-align: center;
   font-size: 1.1em;
+  border-right: 1px solid ivory; /* Dun rand tussen kolomme */
+}
+/* Verwyder die laaste vertikale lyn in die header */
+.Pryslys th:last-child {
+  border-right: none;
 }
 /* Tabel sel styl */
 .Pryslys td {
   padding: 12px 20px; /* Padding */
   text-align: center;
   vertical-align: top;
-  border-bottom: 1px solid ivory; /* Dun rand onder elke ry */
   height: 15px; /* Spesifieke ry-hoogte */
+  border-bottom: 1px solid ivory; /* Dun rand onder elke ry */
+  border-right: 1px solid ivory; /* Dun rand tussen kolomme */
+}
+
+/* Verwyder rande aan die regterkant van die laaste kolom */
+.Pryslys td:last-child {
+  border-right: none;
+}
+
+/* Verwyder die rand onder die heel laaste ry sodat dit nie met die tabel-rand bots nie */
+.Pryslys tr:last-child td {
+  border-bottom: none;
 }
 
 /* Sweef effek vir tabel */
@@ -254,4 +273,12 @@ select:focus:valid {
 input:focus:invalid,
 select:focus:invalid {
   background-color: red;
+}
+/* Die Vormhouer */
+fieldset {
+  border: 1px solid ivory;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 20px auto; /* Sentreer die veldset op die bladsy */
 }
