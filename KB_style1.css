@@ -197,3 +197,15 @@ footer {
   border-radius: 12px;
   box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg 'n diepte-skaduwee by */
 }
+/* Pryslys styl */
+.Pryslys {
+  /* Breedte en algemene belyning */
+  width: 60%;
+  margin: 20px auto; /* Sentreer die tabel op die bladsy */
+  border-collapse: collapse; /* Verwyder gapings tussen lyne */
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+
+  /* Kleur en rande */
+  border: 1px solid ivory; /* Voeg 'n dun rand by die hele tabel */
+  background-color: rgb(24,26,27); /* Voeg 'n donker agtergrond vir die tabel by*/
+}
