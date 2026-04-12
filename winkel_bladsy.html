@@ -39,18 +39,18 @@
       </tr>
       <tr>
         <td>Vars Tulpe</td>
-        <td>12 blomme</td>
-        <td>R180.00</td>
+        <td>6 blomme</td>
+        <td>R60.00</td>
       </tr>
       <tr>
         <td>Vars Rose</td>
-        <td>12 blomme</td>
-        <td>R200.00</td>
+        <td>6 blomme</td>
+        <td>R80.00</td>
       </tr>
       <tr>
         <td>Vars Dahlia</td>
-        <td>12 blomme</td>
-        <td>R230.00</td>
+        <td>6 blomme</td>
+        <td>R100.00</td>
       </tr>
       <tr>
         <td>Droë roos blare</td>
@@ -68,6 +68,55 @@
         <td>R50.00</td>
       </tr>
     </table>
+
+    <form action="https://www.voorbeeld/formsubmit" method="post">
+      <fieldset id="bestelling">
+        <legend>Bestelvorm</legend>
+        <h3>Kies jou blomme (per 6 blomme):</h3>
+        
+        <div class="produk-item">
+          <label>
+              <input type="checkbox" name="produk" value="tulpe"> Vars Tulpe
+          </label>
+          <input type="number" name="qty-tulpe" value="6" step="6" min="6" max="60">
+      </div>
+  
+      <div class="produk-item">
+          <label>
+              <input type="checkbox" name="produk" value="rose"> Vars Rose
+          </label>
+          <input type="number" name="qty-rose" value="6" step="6" min="6" max="60">
+      </div>
+  
+      <div class="produk-item">
+          <label>
+              <input type="checkbox" name="produk" value="dahlias"> Vars Dahlias
+          </label>
+          <input type="number" name="qty-dahlias" value="6" step="6" min="6" max="60">
+      </div>
+  </div>
+
+        <div class="formrow">
+          <label for="naam">Naam:</label>
+          <input type="text" id="naam" name="naam" placeholder="Naam en van" required />
+        </div>
+
+        <div class="formrow">
+          <label for="email">E-pos:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="formrow">
+          <label for="telefoon">Telefoon:</label>
+          <input type="tel" id="telefoon" name="telefoon" placeholder="(+27) XX XXX XXXX" required />
+        </div>
+
+        <div class="formrow">
+          <label for="adres">Afleweringsadres:</label>
+          <input type="text" id="adres" name="adres" required />
+        </div>
+      </fieldset>
+    </form>
     <!-- Voetskrif -->
     <footer>
       Klasie Blomme Boerdery &#10047; 1001 Boschkop Road, Pretoria, Oos 0053

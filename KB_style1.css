@@ -219,7 +219,7 @@ footer {
 /* Tabel ry opskrif styl */
 .Pryslys th {
   background-color: violet;
-  color: white;
+  color: ivory;
   padding: 10px;
   text-align: center;
   font-size: 1.1em;
@@ -229,7 +229,7 @@ footer {
   padding: 12px 20px; /* Padding */
   text-align: center;
   vertical-align: top;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid ivory; /* Dun rand onder elke ry */
   height: 15px; /* Spesifieke ry-hoogte */
 }
 
