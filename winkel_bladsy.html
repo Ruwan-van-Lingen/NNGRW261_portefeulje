@@ -28,7 +28,7 @@
           <li><a href="galery_bladsy.html">Galery</a></li>
         </ul>
       </nav>
-      <!-- Bestellings beelde met figcaptions -->
+      <!-- Bestellings -->
       <p>Bestel jou blomme hier!</p>
     </article>
     <table class="Pryslys">
@@ -72,33 +72,84 @@
     <form action="https://www.voorbeeld/formsubmit" method="post">
       <fieldset id="bestelling">
         <legend>Bestelvorm</legend>
+
         <h3>Kies jou blomme (per 6 blomme):</h3>
-        
+
         <div class="produk-item">
           <label>
-              <input type="checkbox" name="produk" value="tulpe"> Vars Tulpe
+            <input type="checkbox" name="produk" value="tulpe" /> Vars Tulpe
           </label>
-          <input type="number" name="qty-tulpe" value="6" step="6" min="6" max="60">
-      </div>
-  
-      <div class="produk-item">
-          <label>
-              <input type="checkbox" name="produk" value="rose"> Vars Rose
-          </label>
-          <input type="number" name="qty-rose" value="6" step="6" min="6" max="60">
-      </div>
-  
-      <div class="produk-item">
-          <label>
-              <input type="checkbox" name="produk" value="dahlias"> Vars Dahlias
-          </label>
-          <input type="number" name="qty-dahlias" value="6" step="6" min="6" max="60">
-      </div>
-  </div>
+          <input
+            type="number"
+            name="qty-tulpe"
+            value="6"
+            step="6"
+            min="6"
+            max="60"
+          />
+        </div>
 
+        <div class="produk-item">
+          <label>
+            <input type="checkbox" name="produk" value="rose" /> Vars Rose
+          </label>
+          <input
+            type="number"
+            name="qty-rose"
+            value="6"
+            step="6"
+            min="6"
+            max="60"
+          />
+        </div>
+
+        <div class="produk-item">
+          <label>
+            <input type="checkbox" name="produk" value="dahlias" /> Vars Dahlias
+          </label>
+          <input
+            type="number"
+            name="qty-dahlias"
+            value="6"
+            step="6"
+            min="6"
+            max="60"
+          />
+        </div>
+        <h3>Kies jou ander produkte:</h3>
+        <div class="produk-item">
+          <label>
+            <input type="checkbox" name="produk" value="Droë roos blare" /> Droë
+            roos blare(500g pakkies)
+          </label>
+          <input type="number" name="qty-Droë roos blare" max="10" />
+        </div>
+
+        <div class="produk-item">
+          <label>
+            <input type="checkbox" name="produk" value="blom sade" /> Blom
+            sade(100g pakkies)
+          </label>
+          <input type="number" name="qty-blom sade" max="10" />
+        </div>
+
+        <div class="produk-item">
+          <label>
+            <input type="checkbox" name="produk" value="blom plantjie" /> Blom
+            plantjie(1 potplant)
+          </label>
+          <input type="number" name="qty-blom plantjie" max="5" />
+        </div>
+<h3>Vul jou besonderhede in:</h3>
         <div class="formrow">
           <label for="naam">Naam:</label>
-          <input type="text" id="naam" name="naam" placeholder="Naam en van" required />
+          <input
+            type="text"
+            id="naam"
+            name="naam"
+            placeholder="Naam en van"
+            required
+          />
         </div>
 
         <div class="formrow">
@@ -108,7 +159,13 @@
 
         <div class="formrow">
           <label for="telefoon">Telefoon:</label>
-          <input type="tel" id="telefoon" name="telefoon" placeholder="(+27) XX XXX XXXX" required />
+          <input
+            type="tel"
+            id="telefoon"
+            name="telefoon"
+            placeholder="(+27) XX XXX XXXX"
+            required
+          />
         </div>
 
         <div class="formrow">
