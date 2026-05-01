@@ -253,10 +253,13 @@
     </footer>
     <button id="drukKnoppie">Druk Bladsy</button>
     <script>
+      /*
+   Winkel Script, hierdie script bereken die totale prys van die bestelling
+*/
+
       "use strict";
 
-      // 1. Pryslys as 'n objek vir maklike toegang
-      const pryse = {
+      const PRYSE = {
         tulpe: 60,
         rose: 80,
         dahlias: 100,
@@ -265,61 +268,83 @@
         "blom plantjie": 50,
       };
 
-      // Hardloop funksie wanneer die bladsy gelaai is
-      window.addEventListener("load", function () {
-        const vorm = document.forms[0];
-        const produkItems = document.querySelectorAll(".produk-item");
+      window.addEventListener("load", setupWinkel);
 
-        // Luister vir enige insette in die vorm
-        vorm.addEventListener("input", berekenMandjie);
+      function setupWinkel() {
+        let bestelVorm = document.forms[0];
 
-        function berekenMandjie() {
-          let totaal = 0;
-          let mandjieHTML = "<ul>";
-          let itemsInMandjie = 0;
+        // Hardloop die berekening onmiddellik
+        berekenTotaal();
 
-          produkItems.forEach((item) => {
-            const checkbox = item.querySelector('input[type="checkbox"]');
-            const spinner = item.querySelector('input[type="number"]');
-            const produkNaam = checkbox.value;
+        // Event Listeners vir veranderinge
+        bestelVorm.addEventListener("input", berekenTotaal);
 
-            // As die produk gekies is
-            if (checkbox.checked) {
-              let hoeveelheid = parseInt(spinner.value) || 0;
+        // Valideer die vorm wanneer die "Submit" knoppie gedruk word
+        bestelVorm.addEventListener("submit", valideerBestelling);
 
-              // Vir blomme (per 6), bereken ons hoeveel "stelle" van 6 gekoop word
-              // As die step="6" is, beteken 6 blomme eintlik 1 eenheid van die prys
-              let eenhede =
-                spinner.step === "6" ? hoeveelheid / 6 : hoeveelheid;
+      //  Druk funksie
+        document.getElementById("drukKnoppie").onclick = function () {
+          window.print();
+        };
+      }
 
-              let subTotaal = eenhede * pryse[produkNaam];
-              totaal += subTotaal;
-              itemsInMandjie++;
+      function berekenTotaal() {
+        let totaalPrys = 0;
+        let mandjieLysHTML = "<ul>";
+        let itemsGekies = 0;
+        let produkItems = document.querySelectorAll(".produk-item");
 
-              mandjieHTML += `<li>${produkNaam.toUpperCase()}: ${hoeveelheid} eenhede - <strong>R${subTotaal.toFixed(2)}</strong></li>`;
-            }
-          });
+        produkItems.forEach(function (item) {
+          let boksie = item.querySelector('input[type="checkbox"]');
+          let spinner = item.querySelector('input[type="number"]');
+          let produkNaam = boksie.value;
 
-          mandjieHTML += "</ul>";
+          if (boksie.checked) {
+            let hoeveelheid = parseInt(spinner.value) || 0;
 
-          // Opdateer die HTML vertoning
-          const vertoonElement = document.getElementById("mandjie-items");
-          const totaalElement = document.getElementById("mandjie-totaal");
+            // Logika: As dit blomme is (per 6), bereken stelle. Anders, gebruik eenhede.
+            let eenhede = spinner.step === "6" ? hoeveelheid / 6 : hoeveelheid;
+            let subTotaal = eenhede * PRYSE[produkNaam];
 
-          if (itemsInMandjie > 0) {
-            vertoonElement.innerHTML = mandjieHTML;
-          } else {
-            vertoonElement.innerHTML = "<p>Jou mandjie is nog leeg.</p>";
+            totaalPrys += subTotaal;
+            itemsGekies++;
+
+            mandjieLysHTML += `<li>${produkNaam.charAt(0).toUpperCase() + produkNaam.slice(1)}: 
+                               ${hoeveelheid} eenhede - <strong>R${subTotaal.toFixed(2)}</strong></li>`;
           }
+        });
 
-          totaalElement.textContent = totaal.toFixed(2);
+        mandjieLysHTML += "</ul>";
+
+        // Opdateer die vertoon-elemente
+        let vertoonDiv = document.getElementById("mandjie-items");
+        let totaalSpan = document.getElementById("mandjie-totaal");
+
+        if (itemsGekies > 0) {
+          vertoonDiv.innerHTML = mandjieLysHTML;
+        } else {
+          vertoonDiv.innerHTML = "<p>Jou mandjie is nog leeg.</p>";
         }
-      });
 
-      // Jou bestaande druk funksie
-      document.getElementById("drukKnoppie").onclick = function () {
-        window.print();
-      };
+        totaalSpan.textContent = totaalPrys.toFixed(2);
+      }
+
+      function valideerBestelling(e) {
+        let totaal = parseFloat(
+          document.getElementById("mandjie-totaal").textContent,
+        );
+
+        if (totaal === 0) {
+          // Stop die vorm om te stuur as niks gekies is nie
+          alert(
+            "Oeps! Kies asseblief ten minste een produk voordat jy die bestelling plaas.",
+          );
+          e.preventDefault();
+          return false;
+        }
+
+        alert("Dankie vir jou bestelling! Ons verwerk dit nou.");
+      }
     </script>
   </body>
 </html>
