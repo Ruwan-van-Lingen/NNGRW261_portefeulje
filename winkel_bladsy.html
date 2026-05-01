@@ -237,7 +237,7 @@
       </fieldset>
       <!-- Opsomming van Mandjie -->
       <section id="mandjie-houer">
-        <legend> Inkopiemandjie</legend>
+        <legend>Inkopiemandjie</legend>
         <div id="mandjie-items">
           <p>Jou mandjie is nog leeg.</p>
         </div>
@@ -246,6 +246,18 @@
         </p>
       </section>
     </form>
+    <!-- Knoppie om mandjie te wys/versteek -->
+    <button type="button" id="skakelMandjie">Wys/Versteek Mandjie</button>
+
+    <section id="mandjie-houer" style="display: none">
+      <h2>Jou Inkopiemandjie</h2>
+      <div id="mandjie-items">
+        <p>Jou mandjie is nog leeg.</p>
+      </div>
+      <p>
+        <strong>Totaal: R<span id="mandjie-totaal">0.00</span></strong>
+      </p>
+    </section>
     <!-- Voetskrif -->
     <footer>
       Klasie Blomme Boerdery &#10047; 1001 Boschkop Road, Pretoria, Oos 0053
@@ -282,9 +294,23 @@
         // Valideer die vorm wanneer die "Submit" knoppie gedruk word
         bestelVorm.addEventListener("submit", valideerBestelling);
 
-      //  Druk funksie
+        //  Druk funksie
         document.getElementById("drukKnoppie").onclick = function () {
           window.print();
+        };
+        // Kry verwysings na die knoppie en die mandjie
+        var knoppie = document.getElementById("skakelMandjie");
+        var mandjie = document.getElementById("mandjie-houer");
+
+        // Stel die funksie op vir wanneer die knoppie geklik word
+        knoppie.onclick = function () {
+          if (mandjie.style.display === "none") {
+            // As die mandjie weg is, wys hom
+            mandjie.style.display = "block";
+          } else {
+            // As die mandjie klaar daar is, versteek hom
+            mandjie.style.display = "none";
+          }
         };
       }
 

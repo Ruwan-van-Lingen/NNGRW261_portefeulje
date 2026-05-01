@@ -494,3 +494,24 @@ button {
   font-size: 1em; /* Maak dit groter en meer sigbaar */
   font-weight: bold;
 }
+
+#skakelMandjie {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 1000; /* Sorg dat dit bo alles verskyn */
+
+  background-color: violet;
+  color: ivory;
+  border: 2px solid ivory;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#skakelMandjie:hover {
+  background-color: plum;
+  color: #1a1a1a;
+}
