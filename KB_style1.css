@@ -449,23 +449,44 @@ button {
 }
 
 #mandjie-houer {
-  border: 2px solid ivory;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 8px;
+  max-width: 600px; /* Pas by die vorm se breedte */
+  margin: 40px auto; /* Sentreer dit soos die vorm, met ekstra spasie bo */
+  border: 1px solid ivory; /* Dieselfde rand as die vorm */
+  border-radius: 12px; /* Dieselfde geronde hoeke */
+  padding: 30px; /* Dieselfde interne spasiëring */
+  box-shadow: 0 4px 15px rgb(0, 0, 0); /* Skaduwee vir diepte */
+}
+
+/* Styl vir die mandjie se opskrif */
+#mandjie-houer legend {
+  color: violet;
+  font-size: 1.8em;
+  margin-top: 0;
+  padding-bottom: 15px;
+  border-bottom: 2px solid ivory;
+  margin-bottom: 20px;
 }
 
 #mandjie-items ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 #mandjie-items li {
-  padding: 5px 0;
-  border-bottom: 1px solid ;
+  display: flex;
+  padding: 10px 0;
+  border-bottom: 1px solid ivory; /* Sagter lyn tussen items */
+}
+
+/* Verwyder die lyn onder die laaste item */
+#mandjie-items li:last-child {
+  border-bottom: none;
 }
 
 #mandjie-totaal {
-  color: #d32f2f;
-  font-size: 1.2em;
+  padding-top: 15px;
+  color: plum; 
+  font-size: 1.0em; /* Maak dit groter en meer sigbaar */
+  font-weight: bold;
 }
