@@ -449,12 +449,16 @@ button {
 }
 
 #mandjie-houer {
-  max-width: 600px; /* Pas by die vorm se breedte */
-  margin: 40px auto; /* Sentreer dit soos die vorm, met ekstra spasie bo */
+  max-width: 300px;
+  position: fixed; /* Maak dit 'n vaste element */
+  top: 50px; /* Spasie van die bokant van die bladsy */
+  right: 30px; /* Spasie van die regterkant van die bladsy */
   border: 1px solid ivory; /* Dieselfde rand as die vorm */
   border-radius: 12px; /* Dieselfde geronde hoeke */
   padding: 30px; /* Dieselfde interne spasiëring */
   box-shadow: 0 4px 15px rgb(0, 0, 0); /* Skaduwee vir diepte */
+
+  z-index: 999;
 }
 
 /* Styl vir die mandjie se opskrif */
@@ -486,7 +490,7 @@ button {
 
 #mandjie-totaal {
   padding-top: 15px;
-  color: plum; 
-  font-size: 1.0em; /* Maak dit groter en meer sigbaar */
+  color: plum;
+  font-size: 1em; /* Maak dit groter en meer sigbaar */
   font-weight: bold;
 }
