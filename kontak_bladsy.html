@@ -65,20 +65,44 @@
           </address>
 
           <!-- Kontakvorm / Terugvoer -->
-          <form action="#" method="post" style="margin-top: 2rem;">
+          <form action="#" method="post" style="margin-top: 2rem">
             <fieldset>
               <legend>Laat 'n Boodskap</legend>
               <div class="formrow">
                 <label for="naam">*Naam:</label>
-                <input type="text" id="naam" name="naam" placeholder="Jou naam" required />
+                <input
+                  type="text"
+                  id="naam"
+                  name="naam"
+                  placeholder="Jou naam"
+                  required
+                />
               </div>
               <div class="formrow">
                 <label for="epos">*E-pos:</label>
-                <input type="email" id="epos" name="epos" placeholder="Jou e-pos adres" required />
+                <input
+                  type="email"
+                  id="epos"
+                  name="epos"
+                  placeholder="Jou e-pos adres"
+                  required
+                />
               </div>
               <div class="formrow">
                 <label for="boodskap">*Boodskap:</label>
-                <textarea id="boodskap" name="boodskap" placeholder="Jou boodskap of terugvoer..." rows="4" required style="flex: 2; padding: 8px; margin-left: 20px; font-family: inherit;"></textarea>
+                <textarea
+                  id="boodskap"
+                  name="boodskap"
+                  placeholder="Jou boodskap of terugvoer..."
+                  rows="4"
+                  required
+                  style="
+                    flex: 2;
+                    padding: 8px;
+                    margin-left: 20px;
+                    font-family: inherit;
+                  "
+                ></textarea>
               </div>
               <div class="button-row">
                 <button type="submit" class="btn-submit">Stuur Boodskap</button>
@@ -93,5 +117,10 @@
       Klasie Blomme Boerdery &#10047; 1001 Boschkop Road, Pretoria, Oos 0053
       &#10047; 021 555 1234 &#10047;
     </footer>
+    <script>
+      document.getElementById("drukKnoppie").onclick = function () {
+        window.print();
+      };
+    </script>
   </body>
 </html>

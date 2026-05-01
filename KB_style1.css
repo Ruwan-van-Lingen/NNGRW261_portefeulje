@@ -358,23 +358,23 @@ button {
 }
 /* Submit Knoppie Styl */
 .btn-submit {
-    background-color: plum; 
-    color: ivory;
+  background-color: plum;
+  color: ivory;
 }
 
 .btn-submit:hover {
-    background-color: violet;
+  background-color: violet;
 }
 
 /* Cancel Knoppie Styl */
 .btn-cancel {
-    background-color: plum;
-    color: ivory;
+  background-color: plum;
+  color: ivory;
 }
 
 .btn-cancel:hover {
-    background-color: violet;
-    color: #c0392b; /* Teks word rooi as jy hover */
+  background-color: violet;
+  color: #c0392b; /* Teks word rooi as jy hover */
 }
 
 /* Mobiel-vriendelike (Responsive) Ontwerp */
@@ -415,4 +415,35 @@ button {
   .produk-item input[type="number"] {
     margin-left: 0;
   }
+}
+@media print {
+  /*  */
+  nav,
+  #drukKnoppie {
+    display: none;
+  }
+
+  /* Opsioneel: Maak seker die foto's pas mooi op die bladsy */
+  .galery-foto {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  footer {
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+  }
+}
+#drukKnoppie {
+  background-color: plum; /* Dieselfde as jou ander knoppies */
+  color: ivory;
+  padding: 12px 25px;
+  border-radius: 6px;
+  border: none;
+  display: block;
+  cursor: pointer;
+}
+
+#drukKnoppie:hover {
+  background-color: violet;
 }
