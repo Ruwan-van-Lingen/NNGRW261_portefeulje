@@ -451,8 +451,8 @@ button {
 #mandjie-houer {
   max-width: 300px;
   position: fixed; /* Maak dit 'n vaste element */
-  top: 50px; /* Spasie van die bokant van die bladsy */
-  right: 30px; /* Spasie van die regterkant van die bladsy */
+  top: 60px; /* Spasie van die bokant van die bladsy */
+  right: 10px; /* Spasie van die regterkant van die bladsy */
   border: 1px solid ivory; /* Dieselfde rand as die vorm */
   border-radius: 12px; /* Dieselfde geronde hoeke */
   padding: 30px; /* Dieselfde interne spasiëring */
@@ -465,7 +465,6 @@ button {
 #mandjie-houer legend {
   color: violet;
   font-size: 1.8em;
-  margin-top: 0;
   padding-bottom: 15px;
   border-bottom: 2px solid ivory;
   margin-bottom: 20px;
@@ -498,7 +497,7 @@ button {
 #skakelMandjie {
   position: fixed;
   top: 10px;
-  right: 20px;
+  right: 10px;
   z-index: 1000; /* Sorg dat dit bo alles verskyn */
 
   background-color: violet;

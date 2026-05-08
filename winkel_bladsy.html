@@ -236,7 +236,7 @@
         </div>
       </fieldset>
       <!-- Opsomming van Mandjie -->
-      <section id="mandjie-houer">
+      <section id="mandjie-houer" style="display: none;">
         <legend>Inkopiemandjie</legend>
         <div id="mandjie-items">
           <p>Jou mandjie is nog leeg.</p>
@@ -249,15 +249,6 @@
     <!-- Knoppie om mandjie te wys/versteek -->
     <button type="button" id="skakelMandjie">Wys/Versteek Mandjie</button>
 
-    <section id="mandjie-houer" style="display: none">
-      <h2>Jou Inkopiemandjie</h2>
-      <div id="mandjie-items">
-        <p>Jou mandjie is nog leeg.</p>
-      </div>
-      <p>
-        <strong>Totaal: R<span id="mandjie-totaal">0.00</span></strong>
-      </p>
-    </section>
     <!-- Voetskrif -->
     <footer>
       Klasie Blomme Boerdery &#10047; 1001 Boschkop Road, Pretoria, Oos 0053
@@ -345,9 +336,12 @@
         // Opdateer die vertoon-elemente
         let vertoonDiv = document.getElementById("mandjie-items");
         let totaalSpan = document.getElementById("mandjie-totaal");
+        let mandjieHouer = document.getElementById("mandjie-houer");
 
         if (itemsGekies > 0) {
           vertoonDiv.innerHTML = mandjieLysHTML;
+          // Wys die mandjie sodra daar items gekies word
+          mandjieHouer.style.display = "block";
         } else {
           vertoonDiv.innerHTML = "<p>Jou mandjie is nog leeg.</p>";
         }
