@@ -33,7 +33,7 @@
       <p>Bestel jou blomme hier!</p>
       <!-- Pryslys -->
     </article>
-    <table class="Pryslys">
+    <table id="prysTabel" class="Pryslys">
       <tr>
         <th>Produk</th>
         <th>Besonderhede</th>
@@ -74,77 +74,8 @@
     <form action="https://www.voorbeeld/formsubmit" method="post">
       <fieldset id="bestelling">
         <legend>Bestelvorm</legend>
-        <!-- Opskrif -->
-        <h3>Kies jou blomme (per 6 blomme):</h3>
-        <!-- Produkte -->
-        <!-- Tulpe checkboks en spinner -->
-        <div class="produk-item">
-          <label>
-            <input type="checkbox" name="produk" value="tulpe" /> Vars Tulpe
-          </label>
-          <input
-            type="number"
-            name="qty-tulpe"
-            value="6"
-            step="6"
-            min="6"
-            max="60"
-          />
-        </div>
-        <!-- Rose checkboks en spinner -->
-        <div class="produk-item">
-          <label>
-            <input type="checkbox" name="produk" value="rose" /> Vars Rose
-          </label>
-          <input
-            type="number"
-            name="qty-rose"
-            value="6"
-            step="6"
-            min="6"
-            max="60"
-          />
-        </div>
-        <!-- Dahlias checkboks en spinner -->
-        <div class="produk-item">
-          <label>
-            <input type="checkbox" name="produk" value="dahlias" /> Vars Dahlias
-          </label>
-          <input
-            type="number"
-            name="qty-dahlias"
-            value="6"
-            step="6"
-            min="6"
-            max="60"
-          />
-        </div>
-        <!-- Ander produkte -->
-        <h3>Kies jou ander produkte:</h3>
-        <!-- Droë roos blare checkboks en spinner -->
-        <div class="produk-item">
-          <label>
-            <input type="checkbox" name="produk" value="Droë roos blare" /> Droë
-            roos blare(500g pakkies)
-          </label>
-          <input type="number" name="qty-Droë roos blare" max="10" />
-        </div>
-        <!-- Blom sade checkboks en spinner -->
-        <div class="produk-item">
-          <label>
-            <input type="checkbox" name="produk" value="blom sade" /> Blom
-            sade(100g pakkies)
-          </label>
-          <input type="number" name="qty-blom sade" max="10" />
-        </div>
-        <!-- Blom plantjie checkboks en spinner -->
-        <div class="produk-item">
-          <label>
-            <input type="checkbox" name="produk" value="blom plantjie" /> Blom
-            plantjie(1 potplant)
-          </label>
-          <input type="number" name="qty-blom plantjie" max="5" />
-        </div>
+        <div id="produkte-houer"></div>
+
         <!-- Kliënt besonderhede -->
         <h3>Vul jou besonderhede in:</h3>
         <!-- Naam -->
@@ -236,7 +167,7 @@
         </div>
       </fieldset>
       <!-- Opsomming van Mandjie -->
-      <section id="mandjie-houer" style="display: none;">
+      <section id="mandjie-houer" style="display: none">
         <legend>Inkopiemandjie</legend>
         <div id="mandjie-items">
           <p>Jou mandjie is nog leeg.</p>
@@ -259,9 +190,70 @@
       /*
    Winkel Script, hierdie script bereken die totale prys van die bestelling
 */
-
       "use strict";
-
+      // Skikking van produkte met naam, prys en huidige voorraad
+      const blommeProdukte = [
+        {
+          naam: "Vars Tulpe",
+          prys: 60,
+          voorraad: 15,
+          eenheid: "6 blomme",
+          waarde: "tulpe",
+          tipe: "blom",
+          max: 60,
+          etiket: "Vars Tulpe",
+        },
+        {
+          naam: "Vars Rose",
+          prys: 80,
+          voorraad: 2,
+          eenheid: "6 blomme",
+          waarde: "rose",
+          tipe: "blom",
+          max: 60,
+          etiket: "Vars Rose",
+        }, // Lae voorraad voorbeeld
+        {
+          naam: "Vars Dahlia",
+          prys: 100,
+          voorraad: 10,
+          eenheid: "6 blomme",
+          waarde: "dahlias",
+          tipe: "blom",
+          max: 60,
+          etiket: "Vars Dahlias",
+        },
+        {
+          naam: "Droë roos blare",
+          prys: 150,
+          voorraad: 20,
+          eenheid: "500g",
+          waarde: "Droë roos blare",
+          tipe: "ander",
+          max: 10,
+          etiket: "Droë roos blare(500g pakkies)",
+        },
+        {
+          naam: "Blom sade",
+          prys: 100,
+          voorraad: 1,
+          eenheid: "100g",
+          waarde: "blom sade",
+          tipe: "ander",
+          max: 10,
+          etiket: "Blom sade(100g pakkies)",
+        }, // Lae voorraad voorbeeld
+        {
+          naam: "Blom plantjie",
+          prys: 50,
+          voorraad: 8,
+          eenheid: "1 potplant",
+          waarde: "blom plantjie",
+          tipe: "ander",
+          max: 5,
+          etiket: "Blom plantjie(1 potplant)",
+        },
+      ];
       const PRYSE = {
         tulpe: 60,
         rose: 80,
@@ -274,6 +266,8 @@
       window.addEventListener("load", setupWinkel);
 
       function setupWinkel() {
+        vertoonPryslys();
+        vertoonProdukteVorm(); // Roep die nuwe funksie
         let bestelVorm = document.forms[0];
 
         // Hardloop die berekening onmiddellik
@@ -364,6 +358,73 @@
         }
 
         alert("Dankie vir jou bestelling! Ons verwerk dit nou.");
+      }
+
+      function vertoonPryslys() {
+        let tabel = document.getElementById("prysTabel");
+
+        // Voeg eers die opskrifte by
+        let htmlInhoud = `<tr><th>Produk</th><th>Besonderhede</th><th>Prys</th><th>Status</th></tr>`;
+
+        // Gebruik 'n for-loop om deur die skikking te gaan
+        for (let i = 0; i < blommeProdukte.length; i++) {
+          let produk = blommeProdukte[i];
+          let statusBoodskap = "";
+
+          // (if/else) vir lae voorraad
+          if (produk.voorraad < 5) {
+            statusBoodskap = "<span style='color: red;'>Lae Voorraad!</span>";
+          } else {
+            statusBoodskap = "Beskikbaar";
+          }
+
+          // Bou die ry
+          htmlInhoud += `<tr>
+            <td>${produk.naam}</td>
+            <td>${produk.eenheid}</td>
+            <td>R${produk.prys.toFixed(2)}</td>
+            <td>${statusBoodskap}</td>
+        </tr>`;
+        }
+
+        // Verander die DOM-element se inhoud
+        tabel.innerHTML = htmlInhoud;
+      }
+
+      // Genereer die HTML vir produkte dinamies binne die vorm
+      function vertoonProdukteVorm() {
+        let houer = document.getElementById("produkte-houer");
+        let htmlInhoud = "<h3>Kies jou blomme (per 6 blomme):</h3>";
+
+        // Genereer die blomme elemente
+        blommeProdukte.forEach((produk) => {
+          if (produk.tipe === "blom") {
+            htmlInhoud += `
+        <div class="produk-item">
+          <label>
+            <input type="checkbox" name="produk" value="${produk.waarde}" /> ${produk.etiket}
+          </label>
+          <input type="number" name="qty-${produk.waarde}" value="6" step="6" min="6" max="${produk.max}" />
+        </div>`;
+          }
+        });
+
+        htmlInhoud += "<h3>Kies jou ander produkte:</h3>";
+
+        // Genereer die ander produkte
+        blommeProdukte.forEach((produk) => {
+          if (produk.tipe === "ander") {
+            htmlInhoud += `
+        <div class="produk-item">
+          <label>
+            <input type="checkbox" name="produk" value="${produk.waarde}" /> ${produk.etiket}
+          </label>
+          <input type="number" name="qty-${produk.waarde}" max="${produk.max}" />
+        </div>`;
+          }
+        });
+
+        houer.innerHTML = htmlInhoud;
       }
     </script>
   </body>
