@@ -514,3 +514,17 @@ button {
   background-color: plum;
   color: #1a1a1a;
 }
+/* Styling vir die Multimedia-video */
+.video-container {
+  width: 80%;
+  max-width: 800px; /* Moenie dat die video te groot word op groot skerms nie */
+  margin: 20px auto; /* Sentrer die video horisontaal */
+  text-align: center; /* Sentreer die teks bo die video */
+  background-color: ivory; /* 'n Ligte agtergrond om dit te laat uitstaan */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.video-container video {
+  border-radius: 4px; 
+}
