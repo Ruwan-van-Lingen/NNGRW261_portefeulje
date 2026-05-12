@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+/* CSS styl dokument
+Outeur: Ruwan van Lingen
+Datum: 2026/05/12
+CSS styl dokument vir Klasie Blomme Boerdery Oor Ons bladsy
+*/
+
+/* figcaption skakels styl */
+figcaption {
+  margin-top: 0.25rem;
+  color: ivory;
+}
+
+figcaption a {
+  color: ivory;
+  text-decoration: none;
+}
+/* figcaption skakels hover styl */
+figcaption a:hover {
+  color: plum;
+  text-decoration: underline;
+}
+
+/*oor ons bladsy foto styl */
+.oor_ons-foto-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.oor_ons-foto-container figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Sentreer die foto en figcaption mooi saam */
+}
+
+.oor_ons-foto {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px; /* Maak die hoeke sagter */
+  box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg 'n diepte-skaduwee by */
+}
+
+.oor_ons-foto-container p {
+  text-align: left !important; /* Links belyn */
+  margin-bottom: 1rem;
+}

@@ -88,110 +88,6 @@ nav a {
   padding: 0.5rem 1rem; /* Maak die klikbare area 'n hele blok */
   color: ivory;
 }
-/* figcaption skakels styl */
-figcaption {
-  margin-top: 0.25rem;
-  color: ivory;
-}
-
-figcaption a {
-  color: ivory;
-  text-decoration: none;
-}
-/* figcaption skakels hover styl */
-figcaption a:hover {
-  color: plum;
-  text-decoration: underline;
-}
-/* Tuisblad foto styl */
-.tuisblad-foto {
-  display: block;
-  max-width: 100%; /* Verhoed dat die foto breër as die skerm word */
-  height: auto; /* Hou die foto se aspect ratio reg */
-  margin: 2rem auto 0 auto; /* 2rem spasie bo, 0 onder, en 'auto' sentreer dit horisontaal */
-  border-radius: 12px; /* Maak die hoeke sagter */
-  box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg 'n diepte-skaduwee by */
-}
-/*oor ons bladsy foto styl */
-.oor_ons-foto-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: center;
-}
-
-.oor_ons-foto-container figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Sentreer die foto en figcaption mooi saam */
-}
-
-.oor_ons-foto {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px; /* Maak die hoeke sagter */
-  box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg 'n diepte-skaduwee by */
-}
-
-.oor_ons-foto-container p {
-  text-align: left !important; /* Links belyn */
-  margin-bottom: 1rem;
-}
-/* Kontak bladsy foto styl */
-.kontak_ons-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: center;
-}
-
-.kontak_ons-container figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Sentreer die foto en figcaption mooi saam */
-}
-
-.kontak-foto {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px; /* Maak die hoeke sagter */
-  box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg 'n diepte-skaduwee by */
-}
-
-.kontak_ons-container p {
-  text-align: left !important; /* Links belyn */
-  margin-bottom: 1rem;
-}
-
-.kontak_ons-container address {
-  font-style: normal; /* Verwyder die verstek skuinsdruk (italics) as jy dit professioneel wil hou */
-  text-align: center; /* Sentreer dit mooi in die kolom */
-  line-height: 1; /* Maak die spasie tussen die reëls van jou adres 'n bietjie groter en leesbaarder */
-  margin-top: 1rem;
-}
-
-/* Galery bladsy styl */
-.galery-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Maak 2 ewe groot kolomme langs mekaar */
-  gap: 1.5rem; /* Die spasie tussen al 4 die foto's */
-  margin-top: 2rem;
-}
-
-.galery-container figure {
-  margin: 0; /* Verwyder die leë verstek kantlyne wat die blaaier outomaties om 'figure' sit */
-  display: flex;
-  flex-direction: column; /* Stapel die foto en onderskrif mooi bo-op mekaar */
-}
-
-.galery-foto {
-  width: 100%;
-  height: auto; /* Verander na auto sodat die foto nie oor die figcaption rek nie */
-  object-fit: cover; /* Verhoed dat foto's uitrek; dit sny die kante netjies af om te pas */
-  aspect-ratio: 4 / 3; /* Dwing dieselfde vorm (4:3) op al vier die foto's af vir 'n eenvormige gallery */
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg skaduwee by vir diepte */
-}
 
 /* Voetnoot styl */
 footer {
@@ -203,178 +99,6 @@ footer {
   margin-bottom: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg 'n diepte-skaduwee by */
-}
-/* Pryslys styl */
-.Pryslys {
-  /* Breedte en algemene belyning */
-  width: 60%;
-  border-collapse: separate; /* Verwyder gapings tussen lyne */
-  border-spacing: 0; /* Verwyder gapings tussen selle */
-  border: 2px solid ivory;
-  border-radius: 12px;
-  margin: 20px auto; /* Sentreer die tabel op die bladsy */
-  overflow: hidden;
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-
-  /* Kleur en rande */
-  border: 1px solid ivory; /* Voeg 'n dun rand by die hele tabel */
-}
-/* Tabel opskrif styl */
-.Pryslys caption {
-  font-size: 1.5em;
-  font-weight: bold;
-  padding: 10px;
-  color: violet;
-}
-/* Tabel ry opskrif styl */
-.Pryslys th {
-  background-color: violet;
-  color: ivory;
-  padding: 10px;
-  text-align: center;
-  font-size: 1.1em;
-  border-right: 1px solid ivory; /* Dun rand tussen kolomme */
-}
-/* Verwyder die laaste vertikale lyn in die header */
-.Pryslys th:last-child {
-  border-right: none;
-}
-/* Tabel sel styl */
-.Pryslys td {
-  padding: 12px 20px; /* Padding */
-  text-align: center;
-  vertical-align: top;
-  height: 15px; /* Spesifieke ry-hoogte */
-  border-bottom: 1px solid ivory; /* Dun rand onder elke ry */
-  border-right: 1px solid ivory; /* Dun rand tussen kolomme */
-}
-
-/* Verwyder rande aan die regterkant van die laaste kolom */
-.Pryslys td:last-child {
-  border-right: none;
-}
-
-/* Verwyder die rand onder die heel laaste ry sodat dit nie met die tabel-rand bots nie */
-.Pryslys tr:last-child td {
-  border-bottom: none;
-}
-
-/* Sweef effek vir tabel */
-.Pryslys tr:hover {
-  background-color: plum;
-}
-/* Validasie style */
-input:focus,
-select:focus,
-textarea:focus {
-  background-color: rgb(220, 255, 220);
-}
-
-/* Groen agtergrond as die data geldig is EN die veld fokus het */
-input:focus:valid,
-select:focus:valid {
-  background-color: green;
-}
-
-/* Rooi agtergrond as die data ongeldig is EN die veld fokus het */
-input:focus:invalid,
-select:focus:invalid {
-  background-color: red;
-}
-/* Die Vormhouer */
-fieldset {
-  border: 1px solid ivory;
-  border-radius: 12px;
-  padding: 30px;
-  max-width: 600px;
-  margin: 20px auto; /* Sentreer die veldset op die bladsy */
-}
-legend {
-  font-size: 1.8em;
-  font-weight: bold;
-  color: violet;
-  padding: 0 15px;
-}
-
-/* Die houer vir elke ry (Checkbox + Teks + Spinner) */
-.produk-item {
-  display: flex;
-  justify-content: space-between; /* Stoot die spinner heeltemal na regs */
-  align-items: center; /* Hou alles vertikaal in die middel van die ry */
-  padding: 12px 0; /* Groter spasie tussen die verskillende rye */
-  border-bottom: 1px solid ivory; /* Opsionele lyn om rye te skei */
-  max-width: 500px; /* Beperk die wydte vir 'n netjiese voorkoms */
-}
-
-/* Die label */
-.produk-item label {
-  display: flex;
-  align-items: center;
-  gap: 15px; /* Spasie tussen die checkbox en die teks */
-  cursor: pointer;
-}
-
-/* Die spinner */
-.produk-item input[type="number"] {
-  margin-left: 40px; /* Spasie tussen teks en spinner */
-  padding: 5px;
-  width: 60px; /* Maak alle spinners dieselfde breedte */
-}
-
-/* Kliënt besonderhede */
-.formrow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-  max-width: 500px;
-}
-
-.formrow label {
-  flex: 1; /* Label links */
-}
-
-.formrow input {
-  flex: 2; /* Invoer veld regs */
-  padding: 8px;
-  margin-left: 20px; /* Maak spasie tussen label en invoer */
-}
-
-.button-row {
-  display: flex;
-  justify-content: flex-end; /* Skuif knoppies na regs */
-  gap: 15px; /* Spasie tussen knoppies */
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid ivory;
-}
-button {
-  padding: 12px 25px;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-/* Submit Knoppie Styl */
-.btn-submit {
-  background-color: plum;
-  color: ivory;
-}
-
-.btn-submit:hover {
-  background-color: violet;
-}
-
-/* Cancel Knoppie Styl */
-.btn-cancel {
-  background-color: plum;
-  color: ivory;
-}
-
-.btn-cancel:hover {
-  background-color: violet;
-  color: #c0392b; /* Teks word rooi as jy hover */
 }
 
 /* Mobiel-vriendelike (Responsive) Ontwerp */
@@ -394,7 +118,7 @@ button {
   .Pryslys {
     width: 100%;
   }
-  /* Vormvelde val onder mekaar in plaas van langs mekaar */
+  /* Vormvelde val onder mekaar */
   .formrow {
     flex-direction: column;
     align-items: flex-start;
@@ -423,7 +147,7 @@ button {
     display: none;
   }
 
-  /* Opsioneel: Maak seker die foto's pas mooi op die bladsy */
+  /* Maak seker die foto's pas mooi op die bladsy */
   .galery-foto {
     max-width: 100%;
     page-break-inside: avoid;
@@ -434,8 +158,9 @@ button {
     margin-top: 20px;
   }
 }
+
 #drukKnoppie {
-  background-color: plum; /* Dieselfde as jou ander knoppies */
+  background-color: plum;
   color: ivory;
   padding: 12px 25px;
   border-radius: 6px;
@@ -447,84 +172,11 @@ button {
 #drukKnoppie:hover {
   background-color: violet;
 }
-
-#mandjie-houer {
-  max-width: 300px;
-  position: fixed; /* Maak dit 'n vaste element */
-  top: 60px; /* Spasie van die bokant van die bladsy */
-  right: 10px; /* Spasie van die regterkant van die bladsy */
-  border: 1px solid ivory; /* Dieselfde rand as die vorm */
-  border-radius: 12px; /* Dieselfde geronde hoeke */
-  padding: 30px; /* Dieselfde interne spasiëring */
-  box-shadow: 0 4px 15px rgb(0, 0, 0); /* Skaduwee vir diepte */
-
-  z-index: 999;
-}
-
-/* Styl vir die mandjie se opskrif */
-#mandjie-houer legend {
-  color: violet;
-  font-size: 1.8em;
-  padding-bottom: 15px;
-  border-bottom: 2px solid ivory;
-  margin-bottom: 20px;
-}
-
-#mandjie-items ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-#mandjie-items li {
-  display: flex;
-  padding: 10px 0;
-  border-bottom: 1px solid ivory; /* Sagter lyn tussen items */
-}
-
-/* Verwyder die lyn onder die laaste item */
-#mandjie-items li:last-child {
-  border-bottom: none;
-}
-
-#mandjie-totaal {
-  padding-top: 15px;
-  color: plum;
-  font-size: 1em; /* Maak dit groter en meer sigbaar */
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
   font-weight: bold;
-}
-
-#skakelMandjie {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 1000; /* Sorg dat dit bo alles verskyn */
-
-  background-color: violet;
-  color: ivory;
-  border: 2px solid ivory;
-  border-radius: 8px;
-  padding: 10px 15px;
-  font-weight: bold;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-#skakelMandjie:hover {
-  background-color: plum;
-  color: #1a1a1a;
-}
-/* Styling vir die Multimedia-video */
-.video-container {
-  width: 80%;
-  max-width: 800px; /* Moenie dat die video te groot word op groot skerms nie */
-  margin: 20px auto; /* Sentrer die video horisontaal */
-  text-align: center; /* Sentreer die teks bo die video */
-  background-color: black; /* 'n Ligte agtergrond om dit te laat uitstaan */
-  padding: 20px;
-  border-radius: 8px;
-}
-
-.video-container video {
-  border-radius: 4px; 
 }

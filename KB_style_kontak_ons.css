@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+/* CSS styl dokument
+Outeur: Ruwan van Lingen
+Datum: 2026/05/12
+CSS styl dokument vir Klasie Blomme Boerdery Kontak bladsy
+*/
+
+/* figcaption skakels styl */
+figcaption {
+  margin-top: 0.25rem;
+  color: ivory;
+}
+
+figcaption a {
+  color: ivory;
+  text-decoration: none;
+}
+/* figcaption skakels hover styl */
+figcaption a:hover {
+  color: plum;
+  text-decoration: underline;
+}
+
+/* Kontak bladsy foto styl */
+.kontak_ons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.kontak_ons-container figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Sentreer die foto en figcaption mooi saam */
+}
+
+.kontak-foto {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px; /* Maak die hoeke sagter */
+  box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg 'n diepte-skaduwee by */
+}
+
+.kontak_ons-container p {
+  text-align: left !important; /* Links belyn */
+  margin-bottom: 1rem;
+}
+
+.kontak_ons-container address {
+  font-style: normal; /* Verwyder die verstek skuinsdruk (italics) as jy dit professioneel wil hou */
+  text-align: center; /* Sentreer dit mooi in die kolom */
+  line-height: 1; /* Maak die spasie tussen die reëls van jou adres 'n bietjie groter en leesbaarder */
+  margin-top: 1rem;
+}
+
+/* Kliënt besonderhede */
+.formrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  max-width: 500px;
+}
+
+.formrow label {
+  flex: 1; /* Label links */
+}
+
+.formrow input {
+  flex: 2; /* Invoer veld regs */
+  padding: 8px;
+  margin-left: 20px; /* Maak spasie tussen label en invoer */
+}
+/* Die Vormhouer */
+fieldset {
+  border: 1px solid ivory;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 20px auto; /* Sentreer die veldset op die bladsy */
+}
+legend {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: violet;
+  padding: 0 15px;
+}
+/* Submit Knoppie Styl */
+.btn-submit {
+  background-color: plum;
+  color: ivory;
+}
+
+.btn-submit:hover {
+  background-color: violet;
+}
