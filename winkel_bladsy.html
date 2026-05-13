@@ -188,9 +188,7 @@
     </footer>
     <button id="drukKnoppie">Druk Bladsy</button>
     <script>
-      /*
-   Winkel Script, hierdie script bereken die totale prys van die bestelling
-*/
+      // Winkel script
       "use strict";
       // Skikking van produkte met naam, prys en huidige voorraad
       const blommeProdukte = [
@@ -268,7 +266,7 @@
 
       function setupWinkel() {
         vertoonPryslys();
-        vertoonProdukteVorm(); // Roep die nuwe funksie
+        vertoonProdukteVorm();
         let bestelVorm = document.forms[0];
 
         // Hardloop die berekening onmiddellik
@@ -314,7 +312,7 @@
           if (boksie.checked) {
             let hoeveelheid = parseInt(spinner.value) || 0;
 
-            // Logika: As dit blomme is (per 6), bereken stelle. Anders, gebruik eenhede.
+            // As dit blomme is, gebruik stelle van 6, anders gebruik die eenhede
             let eenhede = spinner.step === "6" ? hoeveelheid / 6 : hoeveelheid;
             let subTotaal = eenhede * PRYSE[produkNaam];
 
@@ -328,7 +326,6 @@
 
         mandjieLysHTML += "</ul>";
 
-        // Opdateer die vertoon-elemente
         let vertoonDiv = document.getElementById("mandjie-items");
         let totaalSpan = document.getElementById("mandjie-totaal");
         let mandjieHouer = document.getElementById("mandjie-houer");
@@ -350,9 +347,9 @@
         );
 
         if (totaal === 0) {
-          // Stop die vorm om te stuur as niks gekies is nie
+          // Stop die submit van die vorm as niks gekies is nie.
           alert(
-            "Oeps! Kies asseblief ten minste een produk voordat jy die bestelling plaas.",
+            "Kies asseblief ten minste een produk voordat jy die bestelling plaas.",
           );
           e.preventDefault();
           return false;
@@ -364,7 +361,7 @@
       function vertoonPryslys() {
         let tabel = document.getElementById("prysTabel");
 
-        // Voeg eers die opskrifte by
+        // Voeg die opskrifte by
         let htmlInhoud = `<tr><th>Produk</th><th>Besonderhede</th><th>Prys</th><th>Status</th></tr>`;
 
         // Gebruik 'n for-loop om deur die skikking te gaan
@@ -372,7 +369,7 @@
           let produk = blommeProdukte[i];
           let statusBoodskap = "";
 
-          // (if/else) vir lae voorraad
+          // (if/else) voorwaarde vir lae voorraad
           if (produk.voorraad < 5) {
             statusBoodskap = "<span style='color: red;'>Lae Voorraad!</span>";
           } else {
@@ -388,7 +385,7 @@
         </tr>`;
         }
 
-        // Verander die DOM-element se inhoud
+        // Verander die innerHTML
         tabel.innerHTML = htmlInhoud;
       }
 
