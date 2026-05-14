@@ -342,18 +342,22 @@
       }
 
       function valideerBestelling(e) {
-        let totaal = parseFloat(
-          document.getElementById("mandjie-totaal").textContent,
-        );
+        let totaal = parseFloat(document.getElementById("mandjie-totaal").textContent);
 
         if (totaal === 0) {
           // Stop die submit van die vorm as niks gekies is nie.
-          alert(
-            "Kies asseblief ten minste een produk voordat jy die bestelling plaas.",
-          );
+          alert("Kies asseblief ten minste een produk voordat jy die bestelling plaas.");
           e.preventDefault();
           return false;
         }
+
+        // Local storage kode
+        const naam = document.getElementById("naam").value;
+        const epos = document.getElementById("email").value;
+        const adres = document.getElementById("straat").value;
+
+        // stoor
+        stoorBestelling(naam, epos, adres, totaal);
 
         alert("Dankie vir jou bestelling! Ons verwerk dit nou.");
       }
