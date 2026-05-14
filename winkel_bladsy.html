@@ -456,7 +456,7 @@
           <label>
             <input type="checkbox" name="produk" value="${produk.waarde}" /> ${produk.etiket}
           </label>
-          <input type="number" name="qty-${produk.waarde}" max="${produk.max}" />
+          <input type="number" name="qty-${produk.waarde}" value="1" step="1" min="1" max="${produk.max}" />
         </div>`;
           }
         });
