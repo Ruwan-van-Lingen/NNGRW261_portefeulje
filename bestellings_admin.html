@@ -14,6 +14,14 @@
     <link href="KB_style_admin.css" rel="stylesheet" />
   </head>
   <body>
+    <script>
+      // Kyk of admin ingeteken is
+      const isIngeteken = sessionStorage.getItem("adminIngeteken");
+      if (isIngeteken !== "true") {
+        alert("Jy moet eers inteken as administrateur.");
+        window.location.href = "admin_login.html";
+      }
+    </script>
     <article class="admin-header">
       <h1>Admin Bestellings</h1>
       <nav>
@@ -29,6 +37,7 @@
         Hier kan jy al die bestellings sien wat deur die winkelbladsy geplaas
         is.
       </p>
+      <button class="admin-btn" onclick="logout()" style="margin-bottom: 20px;">Teken Uit</button>
     </article>
 
     <section id="admin-seksie" class="admin-seksie">
@@ -113,6 +122,12 @@
           localStorage.removeItem("bestellings");
           laaiAdminTabel();
         }
+      }
+
+      function logout() {
+        sessionStorage.removeItem("adminIngeteken");
+        alert("Jy is nou uitgeteken.");
+        window.location.href = "admin_login.html";
       }
 
       window.addEventListener("load", laaiAdminTabel);

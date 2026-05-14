@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Klasie Blomme</title>
+    <link href="KB_style1.css" rel="stylesheet">
+   <link href="KB_style_admin_login.css" rel="stylesheet">
+</head>
+<body>
+    <article class="login-container">
+        <h1>Admin Toegang</h1>
+        <p>Tik die admin-wagwoord in om toegang te kry:</p>
+        <input type="password" id="wagwoordInvoer" placeholder="Wagwoord">
+        <button onclick="valideerLogin()">Teken In</button>
+        <p id="foutBoodskap" class="error" style="display: none;">Verkeerde wagwoord!</p>
+    </article>
+
+    <script>
+        function valideerLogin() {
+            const ww = document.getElementById("wagwoordInvoer").value;
+            // Stel die wagwoord hier (kan verander word)
+            const korrekteWagwoord = "Klasie";
+
+            if (ww === korrekteWagwoord) {
+                // Stoor 'n tydelike sessie
+                sessionStorage.setItem("adminIngeteken", "true");
+                // Gaan na admin bladsy
+                window.location.href = "bestellings_admin.html";
+            } else {
+                document.getElementById("foutBoodskap").style.display = "block";
+            }
+        }
+
+        // Laat Enter-toets ook werk
+        document.getElementById("wagwoordInvoer").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                valideerLogin();
+            }
+        });
+    </script>
+</body>
+</html>
