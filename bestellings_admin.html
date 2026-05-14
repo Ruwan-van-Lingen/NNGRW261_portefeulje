@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="af">
+  <head>
+    <!--
+        NNGRW261 Portefeulje - Bestellings admin
+        Author: Ruwan van Lingen - 2025050627
+        Date:   2026/05/14
+        Filename: bestellings_admin.html
+        -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Bestellings - Klasie Blomme</title>
+    <link href="KB_style1.css" rel="stylesheet" />
+    <link href="KB_style_admin.css" rel="stylesheet" />
+  </head>
+  <body>
+    <article class="admin-header">
+      <h1>Admin Bestellings</h1>
+      <nav>
+        <ul>
+          <li><a href="Tuisblad.html">Tuisblad</a></li>
+          <li><a href="oor_ons_bladsy.html">Oor Ons</a></li>
+          <li><a href="winkel_bladsy.html">Bestellings</a></li>
+          <li><a href="kontak_bladsy.html">Kontak Ons</a></li>
+          <li><a href="galery_bladsy.html">Galery</a></li>
+        </ul>
+      </nav>
+      <p>
+        Hier kan jy al die bestellings sien wat deur die winkelbladsy geplaas
+        is.
+      </p>
+    </article>
+
+    <section id="admin-seksie" class="admin-seksie">
+      <h2>Bestellings</h2>
+      <table id="adminTabel" class="bestellings-tabel">
+        <thead>
+          <tr>
+            <th>Datum</th>
+            <th>Kliënt</th>
+            <th>Items</th>
+            <th>Totaal</th>
+            <th>Aksie</th>
+          </tr>
+        </thead>
+        <tbody id="bestellingData"></tbody>
+      </table>
+
+      <button class="admin-btn danger" onclick="veeAlleDataUit()">
+        Vee Alle Bestellings Uit
+      </button>
+    </section>
+
+    <script>
+      function laaiAdminTabel() {
+        const tabelBody = document.getElementById("bestellingData");
+        const bestellings =
+          JSON.parse(localStorage.getItem("bestellings")) || [];
+
+        tabelBody.innerHTML = "";
+
+        if (bestellings.length === 0) {
+          tabelBody.innerHTML =
+            "<tr><td colspan='5'>Geen bestellings gevind nie.</td></tr>";
+          return;
+        }
+
+        bestellings.forEach((bestelling, index) => {
+          const row = tabelBody.insertRow();
+          const datum = bestelling.datum
+            ? new Date(bestelling.datum).toLocaleString("af-ZA")
+            : "-";
+          const kliëntNaam =
+            bestelling.klient?.naam || bestelling.kliënt || "-";
+          const itemLys = Array.isArray(bestelling.items)
+            ? bestelling.items
+                .map((item) => `${item.produk} x ${item.hoeveelheid}`)
+                .join(", ")
+            : bestelling.items || "-";
+          const totaal = Number(bestelling.totaal || 0).toFixed(2);
+
+          row.insertCell(0).textContent = datum;
+          row.insertCell(1).textContent = kliëntNaam;
+          row.insertCell(2).textContent = itemLys;
+          row.insertCell(3).textContent = `R${totaal}`;
+
+          const aksieSel = row.insertCell(4);
+          const verwyderKnoppie = document.createElement("button");
+          verwyderKnoppie.textContent = "Verwyder";
+          verwyderKnoppie.className = "admin-btn danger";
+          verwyderKnoppie.style.padding = "6px 10px";
+          verwyderKnoppie.onclick = function () {
+            verwyderBestelling(index);
+          };
+          aksieSel.appendChild(verwyderKnoppie);
+        });
+      }
+
+      function verwyderBestelling(index) {
+        const bestellings =
+          JSON.parse(localStorage.getItem("bestellings")) || [];
+        if (index < 0 || index >= bestellings.length) return;
+
+        if (confirm("Is jy seker jy wil hierdie bestelling verwyder?")) {
+          bestellings.splice(index, 1);
+          localStorage.setItem("bestellings", JSON.stringify(bestellings));
+          laaiAdminTabel();
+        }
+      }
+
+      function veeAlleDataUit() {
+        if (confirm("Vee ALLE bestellings uit?")) {
+          localStorage.removeItem("bestellings");
+          laaiAdminTabel();
+        }
+      }
+
+      window.addEventListener("load", laaiAdminTabel);
+    </script>
+  </body>
+</html>

@@ -28,6 +28,7 @@
           <li><a href="winkel_bladsy.html">Bestellings</a></li>
           <li><a href="kontak_bladsy.html">Kontak Ons</a></li>
           <li><a href="galery_bladsy.html">Galery</a></li>
+          <li><a href="bestellings_admin.html">Bestellings Admin</a></li>
         </ul>
       </nav>
       <!-- Bestellings-->
@@ -342,24 +343,58 @@
       }
 
       function valideerBestelling(e) {
+        e.preventDefault();
+
         let totaal = parseFloat(document.getElementById("mandjie-totaal").textContent);
 
         if (totaal === 0) {
           // Stop die submit van die vorm as niks gekies is nie.
           alert("Kies asseblief ten minste een produk voordat jy die bestelling plaas.");
-          e.preventDefault();
           return false;
         }
 
-        // Local storage kode
-        const naam = document.getElementById("naam").value;
-        const epos = document.getElementById("email").value;
-        const adres = document.getElementById("straat").value;
+        const bestelItems = [];
+        let produkItems = document.querySelectorAll(".produk-item");
 
-        // stoor
-        stoorBestelling(naam, epos, adres, totaal);
+        produkItems.forEach(function (item) {
+          let boksie = item.querySelector('input[type="checkbox"]');
+          let spinner = item.querySelector('input[type="number"]');
+          if (boksie.checked) {
+            bestelItems.push({
+              produk: boksie.value,
+              hoeveelheid: parseInt(spinner.value) || 0,
+              prys: PRYSE[boksie.value] || 0,
+            });
+          }
+        });
 
-        alert("Dankie vir jou bestelling! Ons verwerk dit nou.");
+        const bestelling = {
+          id: Date.now(),
+          datum: new Date().toISOString(),
+          items: bestelItems,
+          totaal: totaal,
+          klient: {
+            naam: document.getElementById("naam").value,
+            email: document.getElementById("email").value,
+            telefoon: document.getElementById("telefoon").value,
+            straat: document.getElementById("straat").value,
+            stad: document.getElementById("stad").value,
+            provinsie: document.getElementById("provinsie").value,
+            poskode: document.getElementById("poskode").value,
+          },
+        };
+
+        stoorBestelling(bestelling);
+
+        alert("Dankie vir jou bestelling! Dit is nou gestoor.");
+        document.forms[0].reset();
+        berekenTotaal();
+      }
+
+      function stoorBestelling(bestelling) {
+        const bestellings = JSON.parse(localStorage.getItem("bestellings")) || [];
+        bestellings.push(bestelling);
+        localStorage.setItem("bestellings", JSON.stringify(bestellings));
       }
 
       function vertoonPryslys() {

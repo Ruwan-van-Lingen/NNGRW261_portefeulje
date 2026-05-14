@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+/* CSS styl dokument
+Outeur: Ruwan van Lingen
+Datum: 2026/05/12
+CSS styl dokument vir Klasie Blomme Boerdery Admin Bestellings bladsy
+*/
+
+body {
+    font-family: Arial, sans-serif;
+  }
+  .admin-header {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .admin-seksie {
+    margin: 20px auto;
+    max-width: 1100px;
+    padding: 0 16px;
+  }
+  .admin-seksie h2 {
+    margin-bottom: 16px;
+  }
+  .bestellings-tabel {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .bestellings-tabel th,
+  .bestellings-tabel td {
+    border: 1px solid ivory;
+    padding: 10px;
+    text-align: left;
+  }
+  .bestellings-tabel th {
+    background: violet;
+  }
+  .admin-btn {
+    padding: 10px 16px;
+    color: ivory;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .admin-btn.danger {
+    background-color: red;
+  }
+  .admin-btn small {
+    font-size: 0.9em;
+  }
