@@ -25,9 +25,9 @@ figcaption a:hover {
 /* Tuisblad foto styl */
 .tuisblad-foto {
   display: block;
-  max-width: 100%; /* Verhoed dat die foto breër as die skerm word */
+  max-width: 100%; /* Keer dat die foto breër as die skerm word */
   height: auto; /* Hou die foto se aspect ratio reg */
-  margin: 2rem auto 0 auto; /* 2rem spasie bo, 0 onder, en 'auto' sentreer dit horisontaal */
-  border-radius: 12px; /* Maak die hoeke sagter */
-  box-shadow: 0 4px 15px rgb(0, 0, 0); /* Voeg 'n diepte-skaduwee by */
+  margin: 2rem auto 0 auto;
+  border-radius: 12px; 
+  box-shadow: 0 4px 15px rgb(0, 0, 0); 
 }

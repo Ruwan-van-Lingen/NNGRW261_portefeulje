@@ -15,7 +15,7 @@
   </head>
   <body>
     <script>
-      // Kyk of admin ingeteken is
+      // Toets of administrateur ingeteken is
       const isIngeteken = sessionStorage.getItem("adminIngeteken");
       if (isIngeteken !== "true") {
         alert("Jy moet eers inteken as administrateur.");
@@ -37,7 +37,6 @@
         Hier kan jy al die bestellings sien wat deur die winkelbladsy geplaas
         is.
       </p>
-      <button class="admin-btn" onclick="logout()" style="margin-bottom: 20px; background-color: plum;">Teken Uit</button>
     </article>
 
     <section id="admin-seksie" class="admin-seksie">
@@ -57,6 +56,14 @@
 
       <button class="admin-btn danger" onclick="veeAlleDataUit()">
         Vee Alle Bestellings Uit
+      </button>
+
+      <button
+        class="admin-btn"
+        onclick="logout()"
+        style="margin-bottom: 20px; background-color: plum"
+      >
+        Teken Uit
       </button>
     </section>
 

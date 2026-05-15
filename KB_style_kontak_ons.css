@@ -49,9 +49,9 @@ figcaption a:hover {
 }
 
 .kontak_ons-container address {
-  font-style: normal; /* Verwyder die verstek skuinsdruk (italics) as jy dit professioneel wil hou */
-  text-align: center; /* Sentreer dit mooi in die kolom */
-  line-height: 1; /* Maak die spasie tussen die reëls van jou adres 'n bietjie groter en leesbaarder */
+  font-style: normal; 
+  text-align: center; 
+  line-height: 1; 
   margin-top: 1rem;
 }
 
@@ -79,7 +79,7 @@ fieldset {
   border-radius: 12px;
   padding: 30px;
   max-width: 600px;
-  margin: 20px auto; /* Sentreer die veldset op die bladsy */
+  margin: 20px auto; 
 }
 legend {
   font-size: 1.8em;

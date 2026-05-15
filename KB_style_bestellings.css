@@ -174,15 +174,15 @@ legend {
 
 #mandjie-houer {
   max-width: 300px;
-  position: fixed; /* Maak dit 'n vaste element */
-  top: 60px; /* Spasie van die bokant van die bladsy */
-  right: 10px; /* Spasie van die regterkant van die bladsy */
-  border: 1px solid ivory; /* Dieselfde rand as die vorm */
-  border-radius: 12px; /* Dieselfde geronde hoeke */
-  padding: 30px; /* Dieselfde interne spasiëring */
-  box-shadow: 0 4px 15px rgb(0, 0, 0); /* Skaduwee vir diepte */
+  position: fixed; /* Maak die inkopiemandjie 'n vaste element */
+  top: 60px;
+  right: 10px; 
+  border: 1px solid ivory; 
+  border-radius: 12px; 
+  padding: 30px; 
+  box-shadow: 0 4px 15px rgb(0, 0, 0); 
 
-  z-index: 999;
+  z-index: 999; /* Hou die mandjie bo ander elemente */
 }
 
 /* Styl vir die mandjie se opskrif */
@@ -193,7 +193,7 @@ legend {
   border-bottom: 2px solid ivory;
   margin-bottom: 20px;
 }
-
+/* mandjie items style */
 #mandjie-items ul {
   list-style-type: none;
   padding: 0;
@@ -222,8 +222,7 @@ legend {
   position: fixed;
   top: 10px;
   right: 10px;
-  z-index: 1000; /* Sorg dat dit bo alles verskyn */
-
+  z-index: 1000; /* Maak seker dit is bo ander elemente */
   background-color: violet;
   color: ivory;
   border: 2px solid ivory;
@@ -242,8 +241,8 @@ legend {
 .video-container {
   width: 80%;
   max-width: 800px; /* Moenie dat die video te groot word op groot skerms nie */
-  margin: 20px auto; /* Sentrer die video horisontaal */
-  text-align: center; /* Sentreer die teks bo die video */
+  margin: 20px auto; 
+  text-align: center; 
   background-color: black; /* 'n Ligte agtergrond om dit te laat uitstaan */
   padding: 20px;
   border-radius: 8px;

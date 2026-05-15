@@ -15,7 +15,7 @@ CSS styl dokument vir Klasie Blomme Boerdery Admin Login bladsy
     padding: 20px;
     border: 1px solid ivory;
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgb(77, 77, 77);
 }
 .login-container h1 {
     color: violet;
