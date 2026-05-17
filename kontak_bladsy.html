@@ -123,6 +123,49 @@
       document.getElementById("drukKnoppie").onclick = function () {
         window.print();
       };
+
+      function stoorKontakNavraag(e) {
+        e.preventDefault(); // Keer dat die bladsy herlaai
+
+        const naam = document.getElementById("naam").value;
+        const epos = document.getElementById("epos").value;
+        const boodskap = document.getElementById("boodskap").value;
+
+        const databasis =
+          JSON.parse(localStorage.getItem("bestellings")) || [];
+
+        // Format die navraag 
+        const nuweNavraag = {
+          id: Date.now(),
+          datum: new Date().toISOString(),
+          tipe: "Navraag", // Assign 'n tipe (navraag of bestelling)'
+          items: boodskap, // Die boodskap word hier gestoor
+          totaal: 0,
+          klient: {
+            naam: naam,
+            email: epos,
+            telefoon: "-",
+            straat: "-",
+            stad: "-",
+            provinsie: "-",
+            poskode: "-",
+          },
+        };
+
+        // Voeg by die lys en stoor 
+        databasis.push(nuweNavraag);
+        localStorage.setItem("bestellings", JSON.stringify(databasis));
+
+        alert(
+          "Dankie vir jou boodskap! Dit is suksesvol gestoor vir die Admin.",
+        );
+        document.querySelector("form").reset(); // Maak die vorm skoon
+      }
+
+      // Koppel die funksie aan die kontakvorm se submit-event listener
+      document
+        .querySelector("form")
+        .addEventListener("submit", stoorKontakNavraag);
     </script>
   </body>
 </html>

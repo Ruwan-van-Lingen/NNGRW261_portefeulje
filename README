@@ -1,0 +1,61 @@
+# Klasie Blomme Boerdery - Webtuiste
+
+## Oor Hierdie Projek
+
+Welkom by die webtuiste van **Klasie Blomme Boerdery**! Dit is 'n moderne webtuiste waar klante blomme en blom-verwante produkte kan bestel. Die webtuiste is gebou met HTML, CSS, en JavaScript met "localStorage" vir bestellings.
+
+## Kenmerke
+
+### 🌸 Hoof-Funksionaliteit
+- **Tuisblad (Tuisblad.html)** - Welkomsbladsy
+- **Oor Ons (oor_ons_bladsy.html)** - Inligting oor die boerdery en videos
+- **Bestellings (winkel_bladsy.html)** - Uiteensetting van produkte en bestelingsvorm
+- **Galery (galery_bladsy.html)** - Fotogalery van blomme
+- **Kontak Ons (kontak_bladsy.html)** - Kontakform vir navrae
+
+### 🔐 Admin-Funksionaliteit
+- **Admin Login (admin_login.html)** - Veilige admin-ingang met wagwoord
+- **Admin Bestellings (bestellings_admin.html)** - Administratiewe bladsy wat die bestellings en navrae bestuur
+
+### 📦 Bestellings-Stelsel
+- Dinamiese produk-keuse met checkboxes
+- Hoeveelheid-spinner vir bestelling
+- Regte-tyd mandjie-berekening
+- Kliënt-besonderhede-vorm
+- Localstorage van bestellings
+
+### 📝 Kliënt-Besonderhede
+- Naam validering (slegs letters)
+- E-pos validering
+- Telefoonnommer validering (10 syfers)
+- Adres- en poskode-invore
+- Provinsie-keuse
+
+## Produkte
+
+Die webtuiste bied die volgende blomme en produkte:
+
+| Produk | Besonderhede | Prys |
+|--------|-------------|------|
+| Vars Tulpe | 6 blomme | R60.00 |
+| Vars Rose | 6 blomme | R80.00 |
+| Vars Dahlia | 6 blomme | R100.00 |
+| Droë Roos Blare | 500g | R150.00 |
+| Blom Sade | 100g | R100.00 |
+| Blom Plantjie | 1 potplant | R50.00 |
+
+## Tegnologie
+
+### Frontend
+- **HTML5** - Semantiese opmaak
+- **CSS3** - Responsive ontwerp (mobiel-vriendelik)
+- **JavaScript** - Interaktiwiteit en logika
+
+### Opberging
+- **localStorage** - Klant-bestellings en admin-sessies
+- **sessionStorage** - Admin inlogging sessies
+
+### Redes
+- Afrikaans - Volledige UI in Afrikaans
+
+

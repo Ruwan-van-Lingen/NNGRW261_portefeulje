@@ -77,28 +77,35 @@
 
         if (bestellings.length === 0) {
           tabelBody.innerHTML =
-            "<tr><td colspan='5'>Geen bestellings gevind nie.</td></tr>";
+            "<tr><td colspan='5'>Geen bestellings of navrae gevind nie.</td></tr>";
           return;
         }
 
         bestellings.forEach((bestelling, index) => {
           const row = tabelBody.insertRow();
+
+          if (bestelling.tipe === "Navraag") {
+            row.style.backgroundColor = "rgb(221, 160, 221)"; /* Plum kleur vir navrae */
+          }
           const datum = bestelling.datum
             ? new Date(bestelling.datum).toLocaleString("af-ZA")
             : "-";
-          const kliëntNaam =
+          const suiwernaam =
             bestelling.klient?.naam || bestelling.kliënt || "-";
+            const tipeEtiket = bestelling.tipe ? ` (${bestelling.tipe})` : " (Bestelling)";
+            const kliëntNaam = suiwernaam + tipeEtiket;
           const itemLys = Array.isArray(bestelling.items)
             ? bestelling.items
                 .map((item) => `${item.produk} x ${item.hoeveelheid}`)
                 .join(", ")
             : bestelling.items || "-";
-          const totaal = Number(bestelling.totaal || 0).toFixed(2);
-
+          const totaal = bestelling.tipe === "Navraag"
+            ? "N.V.T."
+            : `R${Number(bestelling.totaal || 0).toFixed(2)}`;
           row.insertCell(0).textContent = datum;
           row.insertCell(1).textContent = kliëntNaam;
           row.insertCell(2).textContent = itemLys;
-          row.insertCell(3).textContent = `R${totaal}`;
+          row.insertCell(3).textContent = totaal;
 
           const aksieSel = row.insertCell(4);
           const verwyderKnoppie = document.createElement("button");
